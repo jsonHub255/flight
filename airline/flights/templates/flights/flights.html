@@ -7,4 +7,15 @@
     <li>Destination: {{ flight.destination }}</li>
     <li>Duration: {{ flight.duration }}</li>
 </ul>
+
+<h2>Pessenger on this Flight</h2>
+<ul>
+
+    {% for pessenger in pessengers %}
+    <li>{{ pessenger }}</li>
+    {% empty %}
+    <li>There are no pessenger(s) on this Flight.</li>
+    {% endfor %}
+    <a href="{% url 'index' %}">Back to flights</a>
+</ul>
 {% endblock %}
